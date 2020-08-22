@@ -42,7 +42,7 @@ $(document).ready(function () {
 
             $.ajax(hikingProject).done(function (response) {
                 // console.log(response);
-                console.log(response.trails[0]);
+                console.log(response.trails);
             });
         });
     });
