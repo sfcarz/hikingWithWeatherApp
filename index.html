@@ -20,12 +20,11 @@
 
 <body>
     <!-- Jumbotron (header)-->
-    <div class="card card-image" style="background-image: url(#);">
+    <div class="card card-image" style="background-image: url(./Images/fallForest.jpg)">
         <div class="text-white text-center rgba-stylish-strong py-5 px-4">
             <div class="py-5">
 
                 <!-- Content -->
-                <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
                 <h2 class="card-title h2 my-4 py-2">Welcome to our hiking app</h2>
                 <p class="mb-4 pb-2 px-md-5 mx-md-5">Start by searching the location you would like to find a trail</p>
                 <form class="form-inline offset-5 mr-auto">
@@ -41,69 +40,190 @@
     <!-- Jumbotron -->
 
 
-        <div class="container">
-            <!--Section heading-->
-            <h1 class="h1 pt-4 text-center">Results</h1>
-            <!--Section description-->
-            <p class="grey-text mb-5 mt-5 px-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-                amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-                pariatur accusamus veniam.
-            </p>
+    <div class="container mt-1">
+        <!--Section heading-->
+        <h1 class="h1 pt-4 text-center">Results</h1>
+        <!--Section description-->
+        <p class="grey-text mb-5 mt-5 px-3 " id="paragraph">
+            <h4 class="text-center text-info">Combining all in 1. The weather with Hiking Options.</h4>
+        </p>
 
-            <div class="row">
-                <div class="col-2" id="weather">
-                    <!-- Card Dark -->
-                    <!-- Card Dark -->
+        <div class="row">
+            <div class="col-2" id="weather"></div>
+
+            <div class="col-8">
+                <div class="row" id="containerCards">
+                <div class="row row-cols-1 row-cols-md-2"></div>
                 </div>
-
-                    <div class="col-8" id="containerCards">
-
-                        <!-- <div class="row row-cols-3 row-cols-md-3">
-                            <div class="col mb-4">
-                                <!-- Card -->
-                                <!-- <div class="card"> -->
-
-                                    <!--Card image-->
-                                    <!-- <div class="view overlay">
-                                        <img class="card-img-top"
-                                            src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
-                                            alt="Card image cap">
-                                        <a href="#!">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div> -->
-
-                                    <!--Card content-->
-                                    <!-- <div class="card-body"> -->
-
-                                        <!--Title-->
-                                        <!-- <h4 class="card-title">Card title</h4> -->
-                                        <!--Text-->
-                                        <!-- <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of the
-                                            card's content.</p> -->
-                                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                        <!-- <button type="button" class="btn btn-light-blue btn-md">Read more</button> -->
-
-                                    <!-- </div> -->
-
-                                <!-- </div> -->
-                                <!-- Card -->
-                            <!-- </div> -->
-                            
-                        <!-- </div> -->
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Hard coded card deck with popular trails in CA -->
+                        <div class="card-deck">
+                            <!-- Card -->
+                            <div class="card mb-4">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img class="card-img-top" src="https://live.staticflickr.com/7061/6803789614_6fdf6d00de_b.jpg"
+                                        alt="Card image cap">
+                                    <a href="#!">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Pine Ridge Trail to Sykes Hot Springs</h4>
+                                    <!--Text-->
+                                    <p class="card-text">Punctuated by majestic redwood groves in the pockets of the
+                                        mountain, this path climbs past several camping areas and streams. The terrain
+                                        is rocky and steep, often hugging the cliffside.
+                                    </p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                            <!-- Card -->
+                            <div class="card mb-4">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img class="card-img-top"
+                                        src="https://ucarecdn.com/dc6675b1-e7d3-46cc-978e-1d8d395cbeec/-/preview/-/enhance/50/-/resize/1000x/-/format/auto/-/progressive/yes/-/quality/lightest/"
+                                        alt="Card image cap">
+                                    <a href="#!">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Tomales Point Trail</h4>
+                                    <!--Text-->
+                                    <p class="card-text">The Tomales Point Trail travels along the ridgeline towards the
+                                        northernmost tip of the peninsula offering amazing views of the Pacific
+                                        coastline and down into Tomales Bay. The wide former ranch road passes through
+                                        scrub and grasses with only minor hills to climb.
+                                    </p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                            <!-- Card -->
+                            <div class="card mb-4">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img class="card-img-top"
+                                        src="https://static.rootsrated.com/image/upload/s--kwlnjVIz--/t_rr_large_traditional/gastmsi6lpohixktxfuc.jpg"
+                                        alt="Card image cap">
+                                    <a href="#!">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Wall Street Mill Trail</h4>
+                                    <!--Text-->
+                                    <p class="card-text">This flat hike is great for families with young explorers. An
+                                        abandoned homestead, a few ancient vehicles, a windmill, the stamp mill, and if
+                                        you're lucky: a gravestone!</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                        <!-- Card deck -->
+                        <!-- Card deck -->
+                        <div class="card-deck">
+                            <!-- Card -->
+                            <div class="card mb-4">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img class="card-img-top"
+                                        src="https://media-cdn.tripadvisor.com/media/photo-s/18/0a/74/db/natural-beauty.jpg"
+                                        alt="Card image cap">
+                                    <a href="#!">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Burney Falls</h4>
+                                    <!--Text-->
+                                    <p class="card-text">Nestled within the McArthur-Burney Falls Memorial State Park
+                                        Campground, Burney Falls stands at a majestic 129 feet, being fed its water from
+                                        old volcanic springs and feeding into Lake Britton.Theodore Roosevelt, called
+                                        this little gem the "8th Wonder of the World."</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                            <!-- Card -->
+                            <div class="card mb-4">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img class="card-img-top"
+                                        src="https://www.backpacker.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3NTk2MDMwNjM0ODk1MzI0/denys-nevozhai-494172-unsplash.jpg"
+                                        alt="Card image cap">
+                                    <a href="#!">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Tahoe Rim Trail - Kingsbury to Star Lake</h4>
+                                    <!--Text-->
+                                    <p class="card-text">This section of the Tahoe Rim Trail has the highest elevation
+                                        of the whole rim, with spectacular views of South Lake Tahoe and the Carson
+                                        Valley.</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                            <!-- Card -->
+                            <div class="card mb-4">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img class="card-img-top"
+                                        src="https://bloximages.chicago2.vip.townnews.com/malibutimes.com/content/tncms/assets/v3/editorial/b/aa/baac5cfc-1b59-11e7-9981-97084b86c361/58e72f10549b7.image.jpg?resize=400%2C300"
+                                        alt="Card image cap">
+                                    <a href="#!">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Zuma Ridge/Canyon Loop</h4>
+                                    <!--Text-->
+                                    <p class="card-text">This loops features a mildly challenging climb up Zuma Ridge,
+                                        then down and up the other side of Zuma Canyon. There are great ocean and
+                                        virtually unspoiled canyon views along the way.</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                        <!-- Card deck -->
                     </div>
-                <!-- </div> -->
-
-                <div class="col-2">
-
                 </div>
+
+                <div class="row"></div>
             </div>
 
-
+            <div class="col-2" id="userLocation"></div>
         </div>
-        <!--Grid row-->
+
+
+    </div>
+    <!--Grid row-->
 
     <!--Section: Pricing v.2-->
 
