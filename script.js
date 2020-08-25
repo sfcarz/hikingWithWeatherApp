@@ -1,22 +1,58 @@
 $(document).ready(function () {
 
-    const $search = $('#search');
+    const $weather = $('#weather');
+    const $search = $('#search')
     const $searching = $('#Searching');
-
-    // const tempF = (temp * 9/5) + 32;
+    const $cards = $('#containerCards');
 
 
     let position;
     navigator.geolocation.getCurrentPosition(function (pos) {
-        // console.log(pos);
         position = pos;
+        // console.log(position);
+        let geoLat = position.coords.latitude;
+        let geoLon = position.coords.longitude;
+
+        $.ajax({
+            url: `http://api.weatherstack.com/current?access_key=f1a8eeecc5bdbf06ef0f440e0391e09c&query=${geoLat},${geoLon}`,
+            method: "GET",
+        }).then(function (response) {
+            console.log(response);
+
+            const lat = response.location.lat;
+            const long = response.location.lon;
+
+            let feels = response.current.feelslike;
+            let feelsF = (feels * 9 / 5) + 32;
+            let humid = response.current.humidity;
+            let temp = response.current.temperature;
+            let tempF = (temp * 9 / 5) + 32;
+            let vis = response.current.visibility;
+            let desc = response.current.weather_descriptions[0];
+            let name = response.location.name;
+
+            const payLoad = { feels, humid, temp, vis, desc, name };
+
+            let weatherCard = $('<div>').addClass('card text-center');
+            let content = $('<div>').addClass('card-body elegant-color white-text rounded-bottom');
+            let tittles = $('<h4>').addClass('card-title').text('Current Location');
+            let p = $('<p>').attr('data-attr', JSON.stringify(payLoad));
+            let feelsP = $('<p>').text(`Feels Like: ${feelsF}°`);
+            let humidP = $('<p>').text(`Humidity: ${humid}%`);
+            let tempP = $('<p>').text(`Temperature: ${tempF}° F`);
+            let visP = $('<p>').text(`Visibility: ${vis} mi`);
+            let descP = $('<p>').text(desc).addClass('pb-2');
+            weatherCard.append(content);
+            content.append(tittles, descP, feelsP, humidP, tempP, visP,);
+            $('#userLocation').prepend(weatherCard);
+        }); 
     });
 
-
-
-    $searching.on('click', function (event) {
+$searching.on('click', function (event) {
         event.preventDefault();
-        $search.empty();
+    $weather.empty();
+    $cards.empty();
+    
 
         const location = $search.val();
         // console.log(location);
@@ -50,6 +86,9 @@ $(document).ready(function () {
                             let res = response.trails
                             // console.log(response.trails[0].difficulty);
 
+                            let cardRow = $('<div>').addClass('row row-cols-3 row-cols-md-3');
+                            $('#containerCards').prepend(cardRow);
+
                             for (let i = 0; i < res.length; i++) {
                                 // console.log(i);
                                 
@@ -61,8 +100,7 @@ $(document).ready(function () {
                             // console.log(summary);
 
                             // cardMb goes to cardRow
-                            let cardRow = $('<div>').addClass('row-cols-3 row-cols-md-3');
-                            $('#containerCards').prepend(cardRow);
+                            
                             // cardP4 goes to cardMb
                             let cardMb = $('<div>').addClass('col mb-4');
                             cardRow.append(cardMb);
@@ -78,33 +116,13 @@ $(document).ready(function () {
                             // cardP4.append(cardImg, body);
                             let body = $('<div>').addClass('card-body');
                             let title = $('<h4>').addClass('card-title').text(name);
-                            let cardText = $('<p>').addClass('card-tet').text(summary);
-                            // let button = $('<a>').addClass('white-text d-flex justify-content-end').attr('href' `#`);
-                            // let h5 = $('<h5>').text('Read more');
-                            // let i = $('<i>').addClass('fas fa-angle-double-right');
-                            // h5.append(i);
-                            // button.append(h5);
-                            body.append(title, cardText);
+                                let cardText = $('<p>').addClass('card-tet').text(summary);
+                                let button = $('<button>').addClass('btn btn-outline-info btn-rounded waves-effect').text('Read More').attr('type', 'button');
+                            body.append(title, cardText, button);
                             cardImg.append(img);
                             cardP4.append(cardImg, body);
                             cardMb.append(cardP4);
-
-                        
-                            // whiteSlight appends to anchor
-                            // let anchor = $('<a>').attr(`href: #`);
-                            // let whiteSlight = $('<div>').addClass('mask rgba-white-slight');
-                            // cardImg.append(img, anchor)
-                            // anchor.append(whiteSlight);
-                        
-                            // button, cardText then title append to body in order (title, cardText, button)
-                            
-                        
-                        
-                            // i goes into h5 and h5 goes into button
-                            
-                        
-
-                        };
+                            };
 
                             // console.log(rating, image, location, name, summary);
                         });
@@ -121,8 +139,10 @@ $(document).ready(function () {
                         const long = response.location.lon;
 
                         let feels = response.current.feelslike;
+                        let feelsF = (feels * 9 / 5) + 32;
                         let humid = response.current.humidity;
                         let temp = response.current.temperature;
+                        let tempF = (temp * 9 / 5) + 32;
                         let vis = response.current.visibility;
                         let desc = response.current.weather_descriptions[0];
                         let name = response.location.name;
@@ -133,25 +153,14 @@ $(document).ready(function () {
                         let content = $('<div>').addClass('card-body elegant-color white-text rounded-bottom');
                         let tittles = $('<h4>').addClass('card-title').text(name);
                         let p = $('<p>').attr('data-attr', JSON.stringify(payLoad));
-                        let feelsP = $('<p>').text(`Feels Like: ${feels}`);
-                        let humidP = $('<p>').text(`Humidity: ${humid}`);
-                        let tempP = $('<p>').text(`Temperature: ${temp}`);
-                        let visP = $('<p>').text(`visibility: ${vis}`);
-                        let descP = $('<p>').text(desc);
+                        let feelsP = $('<p>').text(`Feels Like: ${feelsF}°`);
+                        let humidP = $('<p>').text(`Humidity: ${humid}%`);
+                        let tempP = $('<p>').text(`Temperature: ${tempF}° F`);
+                        let visP = $('<p>').text(`Visibility: ${vis} mi`);
+                        let descP = $('<p>').text(desc).addClass('pb-2');
                         weatherCard.append(content);
-                        content.append(tittles, feelsP, humidP, tempP, visP, descP);
+                        content.append(tittles, descP, feelsP, humidP, tempP, visP,);
                         $('#weather').prepend(weatherCard);
-
-
-                        // $('#weatherTitle').text(name);
-                        // $('#weatherInfo').append(feelsP, humidP, tempP, visP, descP, p);
-
-                        // console.log(feels, humid, temp, vis, desc);
-
                     });
-                });
-
-
-
-
-}); 
+});
+});
