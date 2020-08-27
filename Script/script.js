@@ -19,7 +19,7 @@ $(document).ready(function () {
         let geoLon = position.coords.longitude;
 
         $.ajax({
-            url: `http://api.weatherstack.com/current?access_key=900289fd44324d6bc419c7e63002dad9&query=${geoLat},${geoLon}`,
+            url: `https://api.weatherstack.com/current?access_key=900289fd44324d6bc419c7e63002dad9&query=${geoLat},${geoLon}`,
             method: "GET",
         }).then(function (response) {
             // console.log(response);
@@ -183,7 +183,7 @@ $searching.on('click', function (event) {
                     });
 
                     $.ajax({
-                        url: `http://api.weatherstack.com/current?access_key=900289fd44324d6bc419c7e63002dad9&query=${location}`,
+                        url: `https://api.weatherstack.com/current?access_key=900289fd44324d6bc419c7e63002dad9&query=${location}`,
                         method: "GET",
                     }).then(function (response) {
                         // console.log(response);
