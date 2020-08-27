@@ -19,7 +19,7 @@ $(document).ready(function () {
         let geoLon = position.coords.longitude;
 
         $.ajax({
-            url: `http://api.weatherstack.com/current?access_key=f1a8eeecc5bdbf06ef0f440e0391e09c&query=${geoLat},${geoLon}`,
+            url: `http://api.weatherstack.com/current?access_key=900289fd44324d6bc419c7e63002dad9&query=${geoLat},${geoLon}`,
             method: "GET",
         }).then(function (response) {
             // console.log(response);
@@ -145,26 +145,26 @@ $searching.on('click', function (event) {
                                 const modalDiv = $("<div>").addClass("modal fade").attr({ id: "exampleModal", tabindex: "-1", role: "dialog", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" })
                             
                                 modalDiv.html(`
-                              <div class="modal-dialog" role="document">
+                                <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                  <div class="modal-header">
+                                    <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">${name}</h5>
                                     <button type="button" class="close modalExampleClose" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <span aria-hidden="true">&times;</span>
                                     </button>
-                                  </div>
-                                  <div>
-                                  <img class="card-img-top" src="${image}"
+                                    </div>
+                                    <div>
+                                    <img class="card-img-top" src="${image}"
                                         alt="Card image cap">
-                                  </div>
-                                  <div class="modal-body">
+                                    </div>
+                                    <div class="modal-body">
                                     ${summary}
-                                  </div>
-                                  <div class="modal-footer">
+                                    </div>
+                                    <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary modalExampleClose" data-dismiss="modal">Close</button>
-                                  </div>
+                                    </div>
                                 </div>
-                              </div>
+                                </div>
                                 `)
 
                                 $("body").append(modalDiv)
@@ -183,7 +183,7 @@ $searching.on('click', function (event) {
                     });
 
                     $.ajax({
-                        url: `http://api.weatherstack.com/current?access_key=f1a8eeecc5bdbf06ef0f440e0391e09c&query=${location}`,
+                        url: `http://api.weatherstack.com/current?access_key=900289fd44324d6bc419c7e63002dad9&query=${location}`,
                         method: "GET",
                     }).then(function (response) {
                         // console.log(response);
