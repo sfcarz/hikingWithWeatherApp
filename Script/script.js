@@ -24,9 +24,6 @@ $(document).ready(function () {
         }).then(function (response) {
             // console.log(response);
 
-            const lat = response.location.lat;
-            const long = response.location.lon;
-
             let feels = response.current.feelslike;
             let feelsF = (feels * 9 / 5) + 32;
             let humid = response.current.humidity;
@@ -187,9 +184,6 @@ $searching.on('click', function (event) {
                         method: "GET",
                     }).then(function (response) {
                         // console.log(response);
-
-                        const lat = response.location.lat;
-                        const long = response.location.lon;
 
                         let feels = response.current.feelslike;
                         let feelsF = (feels * 9 / 5) + 32;
