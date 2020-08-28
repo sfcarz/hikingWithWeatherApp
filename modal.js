@@ -3,7 +3,9 @@ $('button.btn[type="button"]').on('click', function (event) {
     const place = $(this).attr("data-attribute-location")
     const payload = JSON.parse(place)
     console.log(payload.humid)
+
     const modalDiv = $("<div>").addClass("modal fade").attr({ id: "exampleModal", tabindex: "-1", role: "dialog", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" })
+
     modalDiv.html(`
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -22,12 +24,16 @@ $('button.btn[type="button"]').on('click', function (event) {
     </div>
   </div>
     `)
+
     $("body").append(modalDiv)
     $("#exampleModal").modal()
-})
+});
+
 $(document).on('hidden.bs.modal', function (e) {
     $("#exampleModal").remove()
-})
+});
+
+
 // $(document).on("click", ".modalExampleClose", function(){
 //     $("#exampleModal").remove()
 // })
